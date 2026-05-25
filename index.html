@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CryptoZ - All-in-one Crypto Platform</title>
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+    <!-- mobile-status-bar -->
+    <div class="mobile-status-bar">
+  <div class="status-time" id="statusTime">9:41</div>
+  <div class="status-icons">
+    <span class="signal">📶</span>
+    <img src="assets/wi-fi.png.jpg" alt="wifi-icon">
+    <span class="battery">🔋84%</span>
+  </div>
+</div>
+<header>
+  <div class="container">
+    <nav>
+      <div class="logo">
+       <img src="assets/nexo-cryptoz Logo1.png" alt="nexo-cryptoz logo">
+      </div>
+      <!-- mobile menu -->
+      <div class="hamburger">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Price</a></li>
+        <li><a href="#">Learn</a></li>
+        <li><a href="#">Support</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="#" class="btn btn-ghost">Sign in</a>
+        <button class="btn btn-primary">Get started</button>
+      </div>
+    </nav>
+  </div>
+  </header>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <h1>Your all-in-one platform to buy, sell, trade, and earn Cryptocurrencies</h1>
+      <p>Open a free account in minutes right from your phone and make your money go further</p>
+      <form class="email-form" onsubmit="handleSubmit(event)">
+        <input type="email" placeholder="Email Address..." required>
+        <button type="submit">Get started</button>
+      </form>
+    </div>
+
+     <!-- Converter Card -->
+    <div class="converter-card">
+      <div class="bitcoin2">
+        <img src="assets/bitcoin2.png" alt="Bitcoin">
+      </div>
+      <div class="ethareum1">
+        <img src="assets/ethareum1.png" alt="Ethereum">
+      </div>
+      <h3>Currency Converter</h3>
+
+      <div class="form-group">
+        <label>Amount</label>
+        <div class="currency-container">
+          <select id="currency-first">
+                <option value="bitcoin">₿ BTC</option>
+                <option value="ethereum">Ξ ETH</option>
+                <option value="gbp" selected>🇬🇧 GBP</option>
+                <option value="usd">🇺🇸 USD</option>
+                <option value="eur">🇪🇺 EUR</option>
+                <option value="ngn">🇳🇬 NGN</option>
+                <option value="jpy">🇯🇵 JPY</option>
+                <option value="cad">🇨🇦 CAD</option>
+                <option value="inr">🇮🇳 INR</option>
+          </select>
+          <input type="number" id="worth-first" value="1" min="0" step="any">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Converted to</label>
+        <div class="currency-container">
+          <select id="currency-second">
+            <option value="aud" selected>🇦🇺 AUD</option>
+            <option value="usd">🇺🇸 USD</option>
+            <option value="eur">🇪🇺 EUR</option>
+            <option value="gbp">🇬🇧 GBP</option>
+            <option value="ngn">🇳🇬 NGN</option>
+            <option value="cny">🇨🇳 CNY</option>
+            <option value="chf">🇨🇭 CHF</option>
+            <option value="bitcoin">₿ BTC</option>
+            <option value="ethereum">Ξ ETH</option>
+          </select>
+          <input type="text" id="worth-second">
+        </div>
+        <div class="error-msg" id="errorMsg"></div>
+      </div>
+
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="date-picker" class="date-input">
+      </div>
+
+      <div class="quick-currencies">
+        <span data-currency="eur">EUR</span>
+        <span data-currency="gbp">GBP</span>
+        <span data-currency="bitcoin">BTC</span>
+      </div>
+      <div id="loading" class="loading hidden">
+        <div class="spinner"></div>
+        <span>Fetching rate...</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- stats section -->
+<section class="stats-section">
+  <div class="container">
+    <div class="logos">
+      <span><img src="assets/binance logo.png" alt="binance logo"></span>
+      <span><img src="assets/coinbase.png" alt="coinbase"></span>
+      <span><img src="assets/bitcoin.png" alt="bitcoin"></span>
+      <span><img src="assets/theter.png" alt="theter"></span>
+      <span><img src="assets/bitmex logo.png" alt="bitmex"></span>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <h2>99k</h2>
+        <p>People have joined</p>
+      </div>
+      <div class="stat-item">
+        <h2>50k</h2>
+        <p>VIP users have joined</p>
+      </div>
+      <div class="stat-item">
+        <h2>100+</h2>
+        <p>Big Companies have joined</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- feature section -->
+<section class="features">
+  <div class="container features-grid">
+    <div>
+      <h2>The Most Trusted Cryptocurrency Platform</h2>
+
+      <div class="feature-item">
+        <div class="feature-num">01</div>
+        <h3>Sync between platforms</h3>
+        <p>No matter if you're using our web interface or mobile app — your data is always synced. Just one account for all our services.</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-num">02</div>
+        <h3>More focus, less clutter</h3>
+        <p>No ads, just the crypto and content you love.</p>
+      </div>
+
+      <div class="feature-item">
+        <div class="feature-num">03</div>
+        <h3>Security by default</h3>
+        <p>Enable privacy mode and app locking to protect your data.</p>
+      </div>
+    </div>
+
+    <div class="phone-mockups">
+      <img src="assets/most trusted.png" alt="App screenshots">      
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Top Feature Cards -->
+  <div class="feature-grid">
+    <div class="card card-large">
+      <img src="assets/cryptoapp.png" alt="Crypto App">
+      <div>
+        <h2>Create portfolio today</h2>
+        <p>Buy and sell popular digital currencies, keep track of them in the one place. Has a variety of features that make it the best place to start trading.</p>
+      </div>
+    </div>
+
+    <div class="card card-yellow card-small">
+      <img src="assets/crypto-trading.png" alt="Trading portfolio screenshot">
+      <div class="card-content">
+        <h2>Lightning-Fast Crypto Trading</h2>
+        <p>The Exchange supports USD, EUR, and GBP. Invest in cryptocurrency slowly over time by scheduling buys daily, weekly, or monthly.</p>
+      </div>
+    </div>
+
+    <div class="card card-pink card-small">
+      <img src="assets/security.png" alt="Security">
+      <div class="card-content">
+        <h2>Security From Day One</h2>
+        <p>Safety, security and compliance. Buy and sell popular digital currencies, keep track of them in one place.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Get Started Section -->
+  <section class="get-started">
+    <h2>Get Started in Just Few Minutes</h2>
+    <p class="subtitle">Has a variety of features that make it the best place to start trading</p>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-icon">
+          <img src="assets/signup.png" alt="signup cards">
+        </div>
+        <h3>Sign Up</h3>
+        <p>Buy Bitcoin or Ethereum, then securely store it in your wallet or send it on easily to friends</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon">
+         <img src="assets/fund.png" alt="fund icon">
+        </div>
+        <h3>Fund</h3>
+        <p>Choose your preferred payment method such as bank transfer or credit card to top up your wallet</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-icon">
+          <img src="assets/buycrypto.png" alt="buy crypto icon">
+        </div>
+        <h3>Buy Crypto</h3>
+        <p>Sign up for free wallet on web, iOS or Android and follow our easy process to set up your profile</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <div class="container">
+    <h2>What people are saying</h2>
+    <div class="testimonial-grid" id="testimonialGrid">
+      <!-- JS populates this -->
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-banner">
+      <div class="cta-content">
+        <h2>Take your first step into safe, secure crypto investing</h2>
+        <button class="btn-white" onclick="handleGetStarted()">Get started</button>
+      </div>
+      <div class="crypto-icons">
+        <div class="crypto-icon bitcoin"><img src="assets/btc.png" alt="crypto bitcoin icon"></div>
+        <div class="crypto-icon luna"><img src="assets/luna.png" alt="luna icon"></div>
+        <div class="crypto-icon ethereum"><img src="assets/eth.png" alt="eth icon"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Student</a></li>
+          <li><a href="#">Security</a></li>
+          <li><a href="#">Trust and Safety</a></li>
+          <li><a href="#">Newsroom</a></li>
+          <li><a href="#">Videos</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="#">What's Trending</a></li>
+          <li><a href="#">Product News</a></li>
+          <li><a href="#">Events</a></li>
+          <li><a href="#">University</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Market Updates</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Stock & Fund</a></li>
+          <li><a href="#">Cash Card</a></li>
+          <li><a href="#">Crypto</a></li>
+          <li><a href="#">Options</a></li>
+          <li><a href="#">Gold</a></li>
+          <li><a href="#">Learn Snacks</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <ul>
+          <li><a href="#">Support Center</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">System Status</a></li>
+          <li><a href="#">Areas of Availability</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="#">Prices</a></li>
+          <li><a href="#">Site Widgets</a></li>
+          <li><a href="#">Tax</a></li>
+          <li><a href="#">Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-tagline">Did you know you can do more with crypto while on the go?</p>
+      <div class="logo">
+        <img src="assets/cryptoZLogo.png" alt="nexo cryptoz logo">
+      </div>
+      <p class="copyright">© Design by Amarnath Inwase. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
